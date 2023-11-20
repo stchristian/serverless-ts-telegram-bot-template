@@ -1,0 +1,19 @@
+service: serverless-ts-telegram-bot-template
+
+plugins:
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  webhook:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webhook
+          method: post
+    environment:
+      TELEGRAM_TOKEN: ${param:TELEGRAM_TOKEN}
+      TELEGRAM_API_BASE_URL: ${param:TELEGRAM_API_BASE_URL}
