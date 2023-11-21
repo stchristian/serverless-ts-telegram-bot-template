@@ -1,7 +1,7 @@
-import { commandRegistry } from "./command-registry";
 import { splitParamList } from "./helpers";
 import { TelegramMessage, TelegramMessageEntity } from "./telegram";
 import messages from "./messages";
+import { commandRegistry } from "./commands";
 
 function extractCommandAndParamsFromText(
   cmdEntity: TelegramMessageEntity,
@@ -25,7 +25,7 @@ export async function processCommand(message: TelegramMessage) {
 
   const { command, params } = extractCommandAndParamsFromText(
     cmdEntity,
-    message.text
+    message.text!
   );
 
   if (commandRegistry.contains(command)) {

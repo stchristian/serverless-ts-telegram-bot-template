@@ -1,6 +1,9 @@
 // Type annotations for Telegram API's response objects
 // This includes only a subset of types, feel free to add more.
 
+/**
+ * Update object: https://core.telegram.org/bots/api#update
+ */
 export interface TelegramUpdate {
   update_id: number;
   message?: TelegramMessage;

@@ -16,7 +16,7 @@ interface Command {
 /**
  * Class to hold the list of commands of the Telegram BOT.
  */
-class CommandRegistry {
+export class CommandRegistry {
   private commands: Map<string, Command> = new Map();
 
   addCommand(name: string, handler: CommandHandler, paramsSchema: Schema) {
@@ -46,5 +46,3 @@ class CommandRegistry {
     return this.commands.has(name);
   }
 }
-
-export const commandRegistry = new CommandRegistry();

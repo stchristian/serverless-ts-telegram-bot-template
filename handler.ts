@@ -1,21 +1,9 @@
-import {
-  APIGatewayProxyEventV2,
-  APIGatewayProxyResultV2,
-  Handler,
-} from "aws-lambda";
+import { APIGatewayProxyHandlerV2 } from "aws-lambda";
 import { TelegramUpdate } from "./src/telegram";
 import { processCommand } from "./src/command-processor";
 import telegramService from "./src/telegram-service";
 
-export type APIGatewayProxyHandlerV2<T = never> = Handler<
-  APIGatewayProxyEventV2,
-  APIGatewayProxyResultV2<T>
->;
-
-export const webhook: APIGatewayProxyHandlerV2<any> = async (
-  event,
-  context
-) => {
+export const webhook: APIGatewayProxyHandlerV2 = async (event) => {
   if (typeof event.body === "undefined") {
     return {
       statusCode: 400,
