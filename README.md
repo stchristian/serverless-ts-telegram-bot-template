@@ -14,14 +14,22 @@ This template provides a starting point for developing Telegram bots using the S
 ## Steps
 
 1. You must have serverless framework already installed and AWS credentials properly set up. If you don't have it, see [here](https://www.serverless.com/framework/docs/getting-started)
-2. Configure telegram token
+2. Use this template to create a new service with the following command
+
+```
+serverless create \
+--template-url https://github.com/stchristian/serverless-ts-telegram-bot-template \
+--path myNewTelegramBot
+```
+
+3. Configure telegram token
    - Get your telegram bot token from @BotFather
    - Additionally check the [telegram bot tutorials](https://core.telegram.org/bots/tutorial)
-3. Set up necessary variables so they are available in the environment (TELEGRAM_TOKEN, TELEGRAM_API_BASE_URL). Use [serverless parameteres](https://www.serverless.com/framework/docs/guides/parameters) for the variables. For that you'll need to connect this project to Serverless Dashboard
-4. Add your commands in **/src/commands.ts**
-5. Run `serverless deploy`
-6. Copy the url of the endpoint in the console. [Set up](https://core.telegram.org/bots/api#setwebhook) the webhook endpoint for Telegram API
-7. Send /ping to your bot!
+4. Set up necessary variables so they are available in the environment (TELEGRAM_TOKEN, TELEGRAM_API_BASE_URL). Use [serverless parameteres](https://www.serverless.com/framework/docs/guides/parameters) for the variables. For that you'll need to connect this project to Serverless Dashboard
+5. Add your commands in **/src/commands.ts**
+6. Run `serverless deploy`
+7. Copy the url of the endpoint in the console. [Set up](https://core.telegram.org/bots/api#setwebhook) the webhook endpoint for Telegram API
+8. Send /ping to your bot!
 
 ## Contributing
 
